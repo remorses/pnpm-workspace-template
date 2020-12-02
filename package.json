@@ -2,7 +2,9 @@
     "name": "esbuild-plugins",
     "scripts": {
         "test": "NODE_ENV=test jest",
-        "watch": "ultra -r watch"
+        "watch": "ultra -r watch",
+        "build": "ultra --build -r build",
+        "release": "yarn build && changeset publish"
     },
     "workspaces": {
         "packages": [

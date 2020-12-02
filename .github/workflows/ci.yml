@@ -17,8 +17,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn
+      - run: yarn build
       - run: yarn test
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release
         id: changesets
         uses: changesets/action@master
         with:
