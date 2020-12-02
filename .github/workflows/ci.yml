@@ -22,9 +22,8 @@ jobs:
       - name: Create Release
         id: changesets
         uses: changesets/action@master
-        with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          # publish: yarn release
+        # with:
+        #   publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
