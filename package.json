@@ -6,8 +6,7 @@
     },
     "workspaces": {
         "packages": [
-            "package",
-            "package1"
+            "package"
         ]
     },
     "devDependencies": {
