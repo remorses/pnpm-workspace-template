@@ -8,5 +8,3 @@
     <br/>
     <br/>
 </div>
-
-## Installation
