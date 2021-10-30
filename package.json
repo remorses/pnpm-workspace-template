@@ -1,5 +1,6 @@
 {
-    "name": "template",
+    "name": "root",
+    "private": true,
     "scripts": {
         "test": "NODE_ENV=test jest",
         "watch": "ultra -r watch",
@@ -19,8 +20,8 @@
         "typescript": "^4.4.4",
         "ultra-runner": "^3.10.5"
     },
-    "private": true,
-    "repository": "https://github.com/remorses/esbuild-plugins.git",
+    
+    "repository": "https://github.com/remorses/",
     "author": "remorses <beats.by.morse@gmail.com>",
     "license": ""
 }
