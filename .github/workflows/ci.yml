@@ -1,4 +1,4 @@
-name: Npm Package
+name: CI
 
 on:
   push:
@@ -17,12 +17,24 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       # caching
-      - uses: actions/cache@v2
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-npm-
+      #     restore-keys: |
+      #       ${{ runner.os }}-npm-
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ runner.os }}-
+      # setup pnpm
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.15.1
+          run_install: true
       # scripts
       - run: yarn
       - run: yarn build
