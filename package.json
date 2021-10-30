@@ -7,9 +7,6 @@
         "build": "ultra --build -r build",
         "release": "yarn build && changeset publish"
     },
-    "workspaces": [
-        "package"
-    ],
     "devDependencies": {
         "@changesets/cli": "^2.17.0",
         "@jest/types": "^27.2.5",
@@ -20,7 +17,6 @@
         "typescript": "^4.4.4",
         "ultra-runner": "^3.10.5"
     },
-    
     "repository": "https://github.com/remorses/",
     "author": "remorses <beats.by.morse@gmail.com>",
     "license": ""
