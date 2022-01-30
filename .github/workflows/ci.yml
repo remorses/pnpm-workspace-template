@@ -34,7 +34,7 @@ jobs:
       # setup pnpm
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.15.1
+          version: 6.23.5
           run_install: true
       # scripts
       - run: pnpm i
