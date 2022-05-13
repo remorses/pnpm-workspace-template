@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  ci:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
@@ -17,34 +17,19 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      # caching
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-npm-
-      #     restore-keys: |
-      #       ${{ runner.os }}-npm-
       - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
+          path: ~/pnpm
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       # setup pnpm
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.2.1
         with:
-          version: 6.23.5
-          run_install: true
+          version: 7.0.1
+          run_install: false
       # scripts
-      - run: pnpm i
-      - run: yarn build
-      - run: yarn test
-      - name: Create Release
-        id: changesets
-        uses: changesets/action@master
-        # with:
-        #   publish: yarn release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm i --store-dir ~/pnpm
+      - run: pnpm build
+      - run: pnpm test
