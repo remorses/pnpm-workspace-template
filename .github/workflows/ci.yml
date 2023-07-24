@@ -15,19 +15,12 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        with:
-          path: ~/pnpm
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
-      # setup pnpm
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
           run_install: false
+      - name: Install pnpm dependencies (with cache)
+        uses: covbot/pnpm-install-with-cache@v1
       # scripts
-      - run: pnpm i --store-dir ~/pnpm
       - run: pnpm build
       - run: pnpm test
