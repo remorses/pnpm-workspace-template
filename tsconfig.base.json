@@ -5,6 +5,7 @@
         "allowJs": true,
         "moduleResolution": "Node",
         "lib": [
+            "es2022",
             "es2017",
             "es7",
             "es6"
