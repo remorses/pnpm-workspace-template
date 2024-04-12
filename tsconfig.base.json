@@ -18,7 +18,7 @@
         "esModuleInterop": true,
         "noImplicitAny": false,
         "sourceMap": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "skipLibCheck": true
     }
 }
