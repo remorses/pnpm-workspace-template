@@ -6,7 +6,7 @@
         "composite": true,
         "outDir": "${configDir}/dist",
         "rootDir": "${configDir}/src",
-        "moduleResolution": "Node",
+        "moduleResolution": "Bundler",
         "lib": [
             "es2022",
             "es2017",
