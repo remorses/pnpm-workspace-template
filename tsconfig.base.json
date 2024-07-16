@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ES2022",
         "module": "commonjs",
-        "allowJs": true,
+        "allowJs": false,
         "composite": true,
         "outDir": "${configDir}/dist",
         "rootDir": "${configDir}/src",
@@ -23,5 +23,6 @@
         "sourceMap": true,
         "jsx": "react-jsx",
         "skipLibCheck": true
-    }
+    },
+    "exclude": ["**/node_modules", "**/.*/"]
 }
