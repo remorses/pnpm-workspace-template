@@ -20,6 +20,7 @@
         "downlevelIteration": true,
         "esModuleInterop": true,
         "noImplicitAny": false,
+        "useUnknownInCatchVariables": false,
         "sourceMap": true,
         "jsx": "react-jsx",
         "skipLibCheck": true
